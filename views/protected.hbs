@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta name="description" content="Internal database for Mr Coffee" />
+    <title>Bean Hopper - Home</title>
+</head>
+<!--start of viewable page-->
+<!--header-->
+
+<body>
+    <nav class="navbar navbar-light" style="background-color: #e4e8eb;">
+        <a class="navbar-brand" href="./protected">Home</a>
+        <span>
+            <button onclick="window.location.href = './schedules';" class="btn btn-outline-success my-2 my-sm-0"
+                type="submit">Add schedule</button>
+        </span>
+
+        <span>
+            <button onclick="window.location.href = './login';" class="btn btn-outline-success my-2 my-sm-0"
+                type="submit">Logout</button>
+        </span>
+    </nav>
+    <div class="container">
+        <br>
+        <h1 class="display-4 text-center">All schedules</h1>
+        <br>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">First Name</th>
+                    <th scope="col">Last Name</th>
+                    <th scope="col">Day</th>
+                    <th scope="col">Start Time</th>
+                    <th scope="col">End Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each results}}
+                <tr>
+                    <td>{{firstName}}</td>
+                    <td>{{lastName}}</td>
+                    <td>{{getDay day}}</td>
+                    <td>{{truncTime timestart}}</td>
+                    <td>{{truncTime timeend}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+</body>

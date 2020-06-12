@@ -1,0 +1,33 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <meta name="description" content="Internal database for Mr Coffee" />
+    <title>Login</title>
+</head>
+<!--start of viewable page-->
+<!--header-->
+
+<div class="row justify-content-md-center" style="margin-top: 100px">
+    <div class="col-md-6">
+
+        {{#if message}}
+        <div class="alert {{messageClass}}" role="alert">
+            {{message}}
+        </div>
+        {{/if}}
+        <h2 class="h2 text-center">Login</h2>
+        <form method="POST" action="/login">
+            <div class="form-group">
+                <label for="InputEmail">Email address</label>
+                <input name="email" type="email" class="form-control" id="InputEmail" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+                <label for="InputPassword">Password</label>
+                <input name="password" type="password" class="form-control" id="InputPassword" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+        <br>
+        <a href="./register">Need an account?</a>
+    </div>
+</div>
